@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: piggy bank
+  datasource:
+    url: ${USER_SERVICE_DB_URL}
+    username: ${USER_SERVICE_DB_USERNAME}
+    password: ${USER_SERVICE_DB_PASSWORD}
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      show-sql: true
+      generate-ddl: true
+      properties:
+        hibernate.format_sql: true
+        hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+              ${CLIENT_ID}
+            client-secret:
+              ${CLIENT_SECRET}

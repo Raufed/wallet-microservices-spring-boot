@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: piggy bank
+  datasource:
+    url: ${PIGGY_BANK_DB_URL}
+    username: ${PIGGY_BANK_DB_USERNAME}
+    password: ${PIGGY_BANK_DB_PASSWORD}
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      show-sql: true
+      generate-ddl: true
+      properties:
+        hibernate.format_sql: true
+        hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
